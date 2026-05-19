@@ -1,0 +1,2518 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+html {
+    font-size: 16px;
+    font-family: "LXGW WenKai"
+}
+
+#write {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 15px;
+    line-height: 2.25;
+    color: #000;
+    letter-spacing: 1.1px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: left;
+    position: relative;
+    z-index: 0
+}
+
+#write::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-color: var(--element-color);
+    opacity: .12;
+    -webkit-mask-image: var(--bg-style);
+    mask-image: var(--bg-style);
+    -webkit-mask-size: 20px 20px;
+    mask-size: 20px 20px;
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-position: center;
+    mask-position: center
+}
+
+#write p {
+    color: #333;
+    margin: 10px 10px;
+    font-family: Optima-Regular, Optima, "LXGW WenKai", PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 1rem;
+    word-spacing: 2px
+}
+
+#write h3.md-heading:after,
+h4.md-heading:after,
+h5.md-heading:after,
+h6.md-heading:after {
+    content: " ";
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    vertical-align: top;
+    margin-left: -2px;
+    background-color: var(--element-color-shallow);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 24px 24px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 24px 24px
+}
+
+#write h3.md-heading:after {
+    -webkit-mask-image: var(--h3-icon-shape);
+    mask-image: var(--h3-icon-shape)
+}
+
+#write h4.md-heading:after {
+    -webkit-mask-image: var(--h4-icon-shape);
+    mask-image: var(--h4-icon-shape)
+}
+
+#write h5.md-heading:after {
+    -webkit-mask-image: var(--h5-icon-shape);
+    mask-image: var(--h5-icon-shape)
+}
+
+#write h6.md-heading:after {
+    -webkit-mask-image: var(--h6-icon-shape);
+    mask-image: var(--h6-icon-shape)
+}
+
+#write h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1em auto .8em;
+    line-height: 1.4;
+    width: fit-content;
+    min-width: 120px;
+    min-height: 1.4em;
+    color: #222;
+    position: relative;
+    padding-bottom: 12px;
+    transition: color .3s ease, transform .3s ease;
+    border-bottom: none
+}
+
+#write h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--head-title-h2-background);
+    background-size: 100% auto;
+    transform: translateX(-50%);
+    transition: width .4s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h1:not(.md-focus):hover {
+    color: var(--head-title-color);
+    transform: translateY(-2px)
+}
+
+#write h1.md-focus::after,
+#write h1:focus::after,
+#write h1:hover::after {
+    width: 100%
+}
+
+#write h2 {
+    color: var(--head-title-h2-color);
+    font-size: 1.4rem;
+    line-height: 1.5;
+    width: fit-content;
+    font-weight: 700;
+    margin: 20px 0;
+    padding: 5px 12px;
+    border-radius: 8px;
+    background: var(--head-title-h2-background);
+    background-size: 200% auto;
+    background-position: 0 center;
+    box-shadow: 0 2px 5px rgba(61, 184, 211, .15);
+    transition: background-position .5s ease-out, transform .4s ease, box-shadow .4s ease
+}
+
+#write h2:hover {
+    background-position: 100% center;
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(61, 184, 211, .35)
+}
+
+#write h3 {
+    position: relative;
+    width: fit-content;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 1.3rem;
+    padding-left: 10px;
+    transition: all .3s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h3 {
+    position: relative;
+    width: fit-content;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 1.3rem;
+    padding-left: 10px;
+    transition: all .3s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h3::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 61%;
+    border-radius: 4px;
+    background-color: var(--head-title-color);
+    transition: all .3s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h3 span {
+    border-bottom: 2px hidden var(--head-title-color);
+    transition: color .3s ease
+}
+
+#write h3:hover {
+    padding-left: 18px;
+    color: var(--head-title-color);
+    cursor: pointer
+}
+
+#write h3:hover::before {
+    height: 66%;
+    background-color: var(--head-title-color);
+    width: 7px
+}
+
+#write h4,
+#write h5,
+#write h6 {
+    transition: color .3s ease, transform .3s ease
+}
+
+#write h4::before,
+#write h5::before,
+#write h6::before {
+    transition: all .3s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+#write h4 {
+    margin: 20px 0;
+    font-size: 1.15rem;
+    text-align: left
+}
+
+#write h4::before {
+    content: "";
+    margin-right: 7px;
+    display: inline-block;
+    background-color: var(--head-title-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: var(--head-title-color) 1px solid;
+    vertical-align: inherit
+}
+
+#write h4:hover::before {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 4px var(--element-color-soo-shallow)
+}
+
+#write h5 {
+    margin: 23px 0;
+    font-size: 1.1rem;
+    text-align: left
+}
+
+#write h5::before {
+    content: "";
+    margin-right: 7px;
+    display: inline-block;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: var(--head-title-color) 2px solid;
+    vertical-align: inherit;
+    box-sizing: border-box
+}
+
+#write h5:hover::before {
+    background-color: var(--head-title-color);
+    transform: scale(1.2);
+    box-shadow: 0 0 0 3px var(--element-color-soo-shallow)
+}
+
+#write h6 {
+    margin: 23px 0;
+    font-size: 1.1rem;
+    text-align: left
+}
+
+#write h6::before {
+    content: "-";
+    color: var(--head-title-color);
+    margin-right: 7px;
+    display: inline-block;
+    vertical-align: inherit
+}
+
+#write h6:hover::before {
+    transform: scaleX(1.8) translateX(1px);
+    font-weight: 700
+}
+
+#write h4:hover,
+#write h5:hover,
+#write h6:hover {
+    color: var(--element-color-deep);
+    transform: translateX(6px)
+}
+
+#write {
+    counter-reset: h1
+}
+
+h1 {
+    counter-reset: h2
+}
+
+h2 {
+    counter-reset: h3
+}
+
+h3 {
+    counter-reset: h4
+}
+
+h4 {
+    counter-reset: h5
+}
+
+h5 {
+    counter-reset: h6
+}
+
+.sidebar-content {
+    counter-reset: h1
+}
+
+.outline-content {
+    counter-reset: h1
+}
+
+.outline-h1 {
+    counter-reset: h2
+}
+
+.outline-h2 {
+    counter-reset: h3
+}
+
+.outline-h3 {
+    counter-reset: h4
+}
+
+.outline-h4 {
+    counter-reset: h5
+}
+
+.outline-h5 {
+    counter-reset: h6
+}
+
+.md-toc-content {
+    counter-reset: h1toc
+}
+
+.md-toc-h1 {
+    counter-reset: h2toc
+}
+
+.md-toc-h2 {
+    counter-reset: h3toc
+}
+
+.md-toc-h3 {
+    counter-reset: h4toc
+}
+
+.md-toc-h4 {
+    counter-reset: h5toc
+}
+
+.md-toc-h5 {
+    counter-reset: h6toc
+}
+
+#write h1:before {
+    counter-increment: h1;
+    content: var(--autonum-h1)
+}
+
+#outline-content li.outline-h1>div>span.outline-label:before {
+    counter-increment: h1;
+    content: var(--autonum-h1)
+}
+
+.outline-content .outline-h1>.outline-item>.outline-label:before {
+    counter-increment: h1;
+    content: var(--autonum-h1)
+}
+
+#write span.md-toc-item.md-toc-h1>a:before {
+    counter-increment: h1toc;
+    content: var(--autonum-h1toc)
+}
+
+#write h2:before {
+    counter-increment: h2;
+    content: var(--autonum-h2);
+    color: var(--head-title-h2-color)
+}
+
+.outline-content .outline-h2>.outline-item>.outline-label:before {
+    counter-increment: h2;
+    content: var(--autonum-h2)
+}
+
+li.outline-h2>div>a.outline-label:before {
+    counter-increment: h2;
+    content: var(--autonum-h2)
+}
+
+#write span.md-toc-item.md-toc-h2>a:before {
+    counter-increment: h2toc;
+    content: var(--autonum-h2toc)
+}
+
+#write h3>span:first-of-type::before {
+    counter-increment: h3;
+    content: var(--autonum-h3);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h3>div>span.outline-label:before {
+    counter-increment: h3;
+    content: var(--autonum-h3)
+}
+
+.outline-content .outline-h3>.outline-item>.outline-label:before {
+    counter-increment: h3;
+    content: var(--autonum-h3)
+}
+
+#write span.md-toc-item.md-toc-h3>a:before {
+    counter-increment: h3toc;
+    content: var(--autonum-h3toc)
+}
+
+#write h4>span:first-of-type::before {
+    counter-increment: h4;
+    content: var(--autonum-h4);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h4>div>span.outline-label:before {
+    counter-increment: h4;
+    content: var(--autonum-h4)
+}
+
+.outline-content .outline-h4>.outline-item>.outline-label:before {
+    counter-increment: h4;
+    content: var(--autonum-h4)
+}
+
+#write span.md-toc-item.md-toc-h4>a:before {
+    counter-increment: h4toc;
+    content: var(--autonum-h4toc)
+}
+
+#write h5>span:first-of-type::before {
+    counter-increment: h5;
+    content: var(--autonum-h5);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h5>div>span.outline-label:before {
+    counter-increment: h5;
+    content: var(--autonum-h5)
+}
+
+.outline-content .outline-h5>.outline-item>.outline-label:before {
+    counter-increment: h5;
+    content: var(--autonum-h5)
+}
+
+#write span.md-toc-item.md-toc-h5>a:before {
+    counter-increment: h5toc;
+    content: var(--autonum-h5toc)
+}
+
+#write h6>span:first-of-type::before {
+    counter-increment: h6;
+    content: var(--autonum-h6);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h6>div>span.outline-label:before {
+    counter-increment: h6;
+    content: var(--autonum-h6)
+}
+
+.outline-content .outline-h6>.outline-item>.outline-label:before {
+    counter-increment: h6;
+    content: var(--autonum-h6)
+}
+
+#write span.md-toc-item.md-toc-h6>a:before {
+    counter-increment: h6toc;
+    content: var(--autonum-h6toc)
+}
+
+::marker {
+    color: var(--element-color-deep)
+}
+
+li.md-list-item {
+    margin: .4rem 0
+}
+
+#write ol,
+#write ul {
+    margin-top: 0;
+    margin-left: 16px;
+    margin-bottom: 8px;
+    padding-left: 13px
+}
+
+#write em {
+    padding: 0 3px 0 0
+}
+
+#write ul {
+    list-style-type: disc
+}
+
+#write ul ul {
+    list-style-type: circle
+}
+
+#write ul ul ul {
+    list-style-type: square
+}
+
+#write ol {
+    list-style-type: decimal
+}
+
+#write ol ol {
+    list-style-type: lower-alpha
+}
+
+#write ol ol ol {
+    list-style-type: lower-roman
+}
+
+#write li section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.7rem;
+    text-align: justify;
+    color: #000;
+    font-weight: 500
+}
+
+#write li:before {
+    content: "";
+    height: calc(100% - 45px);
+    top: 35px;
+    position: absolute;
+    border-left: .5px solid var(--element-color);
+    left: -12.5px
+}
+
+#write .task-list-item input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.3rem;
+    height: 1.3rem;
+    position: absolute;
+    top: 3px;
+    left: -22px;
+    outline: 0;
+    cursor: pointer;
+    z-index: 1
+}
+
+#write .task-list-item input::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: 18px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--element-color-deep, #ffa531);
+    background: #fff;
+    transition: all .4s cubic-bezier(.5, 1.6, .4, .7);
+    box-sizing: border-box
+}
+
+#write .task-list-item input::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 138%;
+    width: .35rem;
+    height: .65rem;
+    border: solid #fff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: translate(-50%, -60%) rotate(45deg) scale(1);
+    transition: all .3s cubic-bezier(.5, 1.6, .4, .7);
+    opacity: 0
+}
+
+#write .task-list-item input:checked::before {
+    background: var(--element-color, #ffc000);
+    border-color: var(--element-color, #ffc000);
+    transform: scale(1.05);
+    animation: task-pulse .4s forwards
+}
+
+@keyframes task-pulse {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.15)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+#write .task-list-item input:checked::after {
+    opacity: 1;
+    transform: translate(-50%, -60%) rotate(45deg) scale(1)
+}
+
+#write .task-list-item input[type=checkbox]+p,
+#write .task-list-item input[type=checkbox]+span {
+    position: relative;
+    display: inline;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: color .4s ease;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 50%;
+    background-size: 0 1.5px;
+    background-repeat: no-repeat;
+    transition: background-size .4s cubic-bezier(.25, .8, .25, 1), color .4s ease
+}
+
+#write .task-list-item input[type=checkbox]:checked+p,
+#write .task-list-item input[type=checkbox]:checked+span {
+    color: #bbb;
+    background-size: 100% 1.5px
+}
+
+#write .task-list-item input[type=checkbox]:checked+p>em,
+#write .task-list-item input[type=checkbox]:checked+p>span,
+#write .task-list-item input[type=checkbox]:checked+p>strong {
+    color: inherit
+}
+
+#write blockquote {
+    position: relative;
+    margin: 20px 0;
+    padding: 18px 20px 18px 48px;
+    background-color: var(--element-color-soo-shallow);
+    border: none;
+    border-radius: 16px;
+    color: #555;
+    line-height: 1.6;
+    transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), background-color .3s ease
+}
+
+#write blockquote::before {
+    content: "✨";
+    position: absolute;
+    left: 16px;
+    top: 18px;
+    font-size: 20px;
+    line-height: 1;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif
+}
+
+#write blockquote p {
+    color: #555;
+    margin-bottom: .5em
+}
+
+#write blockquote p:last-child {
+    margin-bottom: 0
+}
+
+#write blockquote:hover {
+    transform: scale(1.02)
+}
+
+#write a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 2px 4px;
+    margin: 0 -2px;
+    border-radius: 4px;
+    background: 0 0;
+    border-bottom: none;
+    transition: all .2s ease
+}
+
+#write p a:not(.md-toc-inner)::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 2px;
+    vertical-align: -.15em;
+    background-color: var(--element-color);
+    -webkit-mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath d='M477.934459 330.486594A50.844091 50.844091 0 0 1 406.752731 258.796425L512 152.532274a254.220457 254.220457 0 0 1 359.467726 359.467726L762.66137 618.772592a50.844091 50.844091 0 1 1-71.690168-71.690169l106.772591-106.772592a152.532274 152.532274 0 0 0-215.578947-215.578947z m70.164846 361.501489A50.844091 50.844091 0 1 1 619.789474 762.66137l-107.281033 107.281033A254.220457 254.220457 0 0 1 152.532274 512L259.813307 406.752731a50.844091 50.844091 0 1 1 72.19861 69.656405l-107.789474 107.281033a152.532274 152.532274 0 0 0 215.578947 215.578947z m-126.601788-16.77855a50.844091 50.844091 0 1 1-71.690168-71.690169l251.678252-251.678252a50.844091 50.844091 0 0 1 71.690169 71.690169z'/%3E%3C/svg%3E") no-repeat center/contain;
+    mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath d='M477.934459 330.486594A50.844091 50.844091 0 0 1 406.752731 258.796425L512 152.532274a254.220457 254.220457 0 0 1 359.467726 359.467726L762.66137 618.772592a50.844091 50.844091 0 1 1-71.690168-71.690169l106.772591-106.772592a152.532274 152.532274 0 0 0-215.578947-215.578947z m70.164846 361.501489A50.844091 50.844091 0 1 1 619.789474 762.66137l-107.281033 107.281033A254.220457 254.220457 0 0 1 152.532274 512L259.813307 406.752731a50.844091 50.844091 0 1 1 72.19861 69.656405l-107.789474 107.281033a152.532274 152.532274 0 0 0 215.578947 215.578947z m-126.601788-16.77855a50.844091 50.844091 0 1 1-71.690168-71.690169l251.678252-251.678252a50.844091 50.844091 0 0 1 71.690169 71.690169z'/%3E%3C/svg%3E") no-repeat center/contain;
+    transition: transform .4s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write a:not(.md-toc-inner):hover {
+    color: var(--element-color-deep);
+    background: var(--element-color-soo-shallow)
+}
+
+#write a:hover:not(.md-toc-inner)::before {
+    transform: rotate(180deg);
+    background-color: var(--element-color-deep)
+}
+
+#write a:visited {
+    color: var(--element-color-deep)
+}
+
+#write sup a::before {
+    content: none
+}
+
+#write mark {
+    background-color: transparent;
+    color: inherit;
+    padding: 0 2px;
+    margin: 0;
+    border-radius: 4px;
+    font-weight: inherit;
+    position: relative;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    background-image: linear-gradient(to top, var(--element-color-so-shallow), var(--element-color-so-shallow));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 40%;
+    transition: background-size .3s cubic-bezier(.34, 1.56, .64, 1), color .3s ease, border-radius .3s ease
+}
+
+#write mark::after,
+#write mark::before {
+    content: none !important;
+    display: none !important
+}
+
+#write mark:hover {
+    background-size: 100% 100%;
+    border-radius: 6px
+}
+
+#write mark strong {
+    color: var(--element-color-deep)
+}
+
+#write mark:hover strong {
+    color: var(--element-color-deep);
+    text-shadow: none
+}
+
+#write strong {
+    color: var(--element-color);
+    font-weight: 700;
+    display: inline;
+    position: relative;
+    border-bottom: 2px solid transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: border-color .3s ease, color .3s ease, text-shadow .3s ease
+}
+
+#write strong:hover {
+    color: var(--element-color);
+    border-bottom-color: var(--element-color-shallow);
+    text-shadow: 0 2px 8px var(--element-color-so-shallow)
+}
+
+#write mark:hover strong {
+    color: #fff;
+    text-shadow: none;
+    transform: translateY(-2px) scale(1.1)
+}
+
+@keyframes stitchFlow {
+    from {
+        background-position-x: 0
+    }
+
+    to {
+        background-position-x: 6px
+    }
+}
+
+#write em {
+    font-style: italic;
+    color: #555;
+    text-decoration: none !important;
+    padding: 0 2px 1px;
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    background-size: 6px 3px;
+    background-image: linear-gradient(-45deg, transparent 35%, var(--element-color-shallow) 35%, var(--element-color-shallow) 65%, transparent 65%);
+    transition: color .2s ease, -webkit-text-stroke .2s ease, background-image .2s ease;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    position: relative;
+    z-index: 0
+}
+
+#write em::after {
+    content: none !important;
+    display: none !important
+}
+
+#write em:hover {
+    color: var(--element-color);
+    font-weight: 400;
+    -webkit-text-stroke: .5px var(--element-color);
+    background-image: linear-gradient(-45deg, transparent 35%, var(--element-color) 35%, var(--element-color) 65%, transparent 65%);
+    animation: stitchFlow .5s linear infinite
+}
+
+#write del {
+    text-decoration: line-through;
+    text-decoration-color: var(--element-color);
+    color: #999;
+    transition: all .3s ease
+}
+
+#write del:hover {
+    opacity: .6;
+    text-decoration-color: var(--element-color-deep);
+    cursor: not-allowed
+}
+
+#write hr {
+    border: none;
+    border-top: 3px dashed var(--element-color-shallow);
+    margin: 30px 0;
+    opacity: .6;
+    transform: scaleX(.8);
+    transition: all .4s ease
+}
+
+#write hr:hover {
+    transform: scaleX(1);
+    border-color: var(--element-color);
+    opacity: 1
+}
+
+#write p:has(img) {
+    text-align: center
+}
+
+#write img {
+    border-radius: 12px;
+    display: inline-block;
+    margin: 15px 5px;
+    object-fit: contain;
+    filter: brightness(1) contrast(1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .05);
+    transition: all .4s cubic-bezier(.34, 1.56, .64, 1);
+    max-width: 100%;
+    cursor: zoom-in
+}
+
+#write p>img:only-child {
+    display: block;
+    margin: 20px auto
+}
+
+#write img:hover {
+    filter: brightness(1.05) contrast(1.05);
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px -4px var(--element-color-soo-shallow);
+    z-index: 10
+}
+
+#write figcaption {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+    line-height: 1.5;
+    transition: color .3s ease
+}
+
+#write figure:hover>figcaption,
+#write p:hover>img+figcaption {
+    color: var(--element-color-deep)
+}
+
+pre.md-meta-block {
+    padding: 30px 20px 20px;
+    margin: 20px 0;
+    font-family: var(--monospace);
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    background-color: var(--element-color-soo-shallow);
+    border: 1.5px dashed var(--element-color);
+    border-radius: 8px;
+    position: relative;
+    transition: all .3s ease
+}
+
+pre.md-meta-block::after {
+    content: "YAML";
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background-color: var(--element-color);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    pointer-events: none
+}
+
+pre.md-meta-block:hover {
+    background-color: #fff;
+    border-style: solid;
+    border-color: var(--element-color-deep);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .05);
+    transform: translateY(-2px)
+}
+
+#write code:not(.md-fencescode) {
+    font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace;
+    font-size: .9em;
+    letter-spacing: .5px;
+    color: var(--element-color-linecode);
+    background-color: var(--element-color-linecode-background);
+    padding: 5px 5px;
+    margin: 0 2px;
+    border-radius: 6px;
+    vertical-align: middle;
+    transition: all .2s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+#write code:not(.md-fencescode):hover {
+    background-color: var(--element-color);
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px var(--element-color-so-shallow);
+    text-decoration: none
+}
+
+.md-diagram {
+    background: 0 0 !important;
+    margin: 20px 0
+}
+
+.node circle,
+.node ellipse,
+.node path,
+.node rect {
+    fill: var(--element-color-so-shallow) !important;
+    stroke: var(--primary-color) !important;
+    stroke-width: 1.5px !important;
+    transition: all .3s ease
+}
+
+.node polygon {
+    fill: color-mix(in srgb, var(--element-color-shallow), transparent 50%) !important;
+    stroke: var(--element-color-deep) !important;
+    stroke-width: 1.5px !important
+}
+
+.edgePath .path,
+.flowchart-link {
+    stroke: var(--element-color-deep) !important;
+    stroke-width: 1.5px !important;
+    opacity: .8 !important
+}
+
+.marker path,
+marker path {
+    fill: var(--element-color-deep) !important;
+    stroke: var(--element-color-deep) !important
+}
+
+.cluster-label text,
+.edgeLabel,
+.labelBkg,
+.node .label {
+    color: var(--appui-color-text) !important;
+    fill: var(--appui-color-text) !important;
+    font-weight: 500 !important;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff !important;
+    background-color: transparent
+}
+
+.edgeLabel .label,
+.edgeLabel div {
+    background-color: #fff !important;
+    border-radius: 4px
+}
+
+.edgeLabel p,
+.edgeLabel span {
+    background-color: transparent !important;
+    color: var(--appui-color-text) !important
+}
+
+.edgeLabel rect {
+    fill: #fff !important;
+    opacity: 1 !important;
+    stroke: none !important
+}
+
+.labelBkg {
+    fill: #fff !important;
+    background-color: #fff !important;
+    opacity: 1 !important
+}
+
+.cluster rect {
+    fill: color-mix(in srgb, var(--element-color-soo-shallow), transparent 50%) !important;
+    stroke: var(--element-color-shallow) !important;
+    stroke-dasharray: 4px !important
+}
+
+.cluster span,
+.cluster-label text {
+    fill: var(--element-color-deep) !important;
+    color: var(--element-color-deep) !important;
+    background: 0 0 !important;
+    font-weight: 700 !important
+}
+
+.md-fences:not([lang=mermaid])::before {
+    content: attr(lang);
+    font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace;
+    text-align: right;
+    padding-right: 15px;
+    color: #7e7e7e;
+    display: block;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==);
+    height: 32px;
+    width: 100%;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-color: #f8f8f8;
+    border-radius: 5px 5px 0 0;
+    background-position: 6px 11px;
+    margin-bottom: 0
+}
+
+.CodeMirror-wrap .CodeMirror-scroll {
+    overflow-x: auto
+}
+
+.md-fences {
+    position: relative;
+    z-index: 1;
+    overflow: visible
+}
+
+.md-fences.md-focus {
+    z-index: 100
+}
+
+.md-fences .cm-s-inner.CodeMirror {
+    margin-top: 0
+}
+
+.cm-s-inner.CodeMirror {
+    padding: 20px 12px 12px 20px;
+    color: #4f5467;
+    font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace;
+    border-radius: 10px;
+    background-color: #fa0303;
+    line-height: 1.6rem
+}
+
+.CodeMirror-gutters {
+    border-right: 1px solid #9d9d9d52;
+    background: inherit;
+    white-space: nowrap
+}
+
+pre.CodeMirror-line {
+    padding: 0 1.2rem
+}
+
+.CodeMirror-linenumber {
+    padding: 0 3px 0 5px;
+    text-align: right;
+    color: #a3a3a3
+}
+
+.cm-s-inner.CodeMirror {
+    background: #f8f8f8;
+    border-radius: 0 0 5px 5px;
+    padding: 5px 12px 12px 12px;
+    page-break-before: auto;
+    line-height: 1.8rem
+}
+
+.md-rawblock .md-rawblock-tooltip {
+    inset: auto .3rem auto auto;
+    transform: translateY(-120%)
+}
+
+.cm-keyword {
+    color: #a626a4 !important;
+    font-weight: 700 !important
+}
+
+.cm-variable {
+    color: #b92121 !important
+}
+
+.cm-tag {
+    color: var(--color-cm-keyword) !important;
+    font-weight: 700 !important
+}
+
+.cm-variable-2,
+.cm-variable-3 {
+    color: #7aadad !important;
+    font-weight: 700 !important
+}
+
+.cm-def {
+    color: #c18401 !important
+}
+
+.cm-attribute {
+    color: #8f6aa8 !important
+}
+
+.cm-comment,
+.md-comment,
+.md-meta {
+    color: #9a9a9a !important
+}
+
+.cm-string {
+    color: #50a14f !important;
+    font-variant-ligatures: common-ligatures !important
+}
+
+.cm-link {
+    color: #e46918 !important
+}
+
+.cm-type {
+    color: #626161
+}
+
+.cm-property {
+    color: #800a84 !important
+}
+
+.cm-tag:not(.cm-bracket) {
+    font-weight: 700 !important
+}
+
+.cm-operator {
+    color: #0abe00 !important
+}
+
+.cm-number {
+    color: #1694b6 !important
+}
+
+.cm-meta {
+    color: #4078f2 !important;
+    font-weight: 700 !important
+}
+
+.cm-builtin {
+    color: #fa6060 !important
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #a626a4 !important;
+    font-weight: 700
+}
+
+kbd {
+    display: inline-block;
+    min-width: 1.6em;
+    text-align: center;
+    padding: 3px 6px;
+    margin: 0 4px;
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: .9em;
+    line-height: 1.4;
+    font-weight: 600;
+    border-radius: 4px;
+    background-color: #fff;
+    color: var(--element-color-deep);
+    border: 1px solid var(--element-color);
+    border-bottom-width: 3px;
+    box-shadow: 0 2px 0 var(--element-color-so-shallow);
+    transition: all .15s cubic-bezier(.25, .8, .25, 1);
+    transform: translateY(0)
+}
+
+kbd:hover {
+    border-bottom-width: 1px;
+    transform: translateY(2px);
+    background-color: var(--element-color-soo-shallow);
+    box-shadow: 0 0 0 transparent;
+    color: var(--element-color-deep)
+}
+
+#write table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid var(--element-color-shallow);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.6
+}
+
+#write table td,
+#write table th {
+    padding: 8px 12px;
+    color: #333;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all .2s ease
+}
+
+#write table td:last-child,
+#write table th:last-child {
+    border-right: none
+}
+
+#write table tr:last-child td {
+    border-bottom: none
+}
+
+#write table th {
+    background-color: var(--element-color-soo-shallow);
+    color: var(--element-color-deep);
+    font-weight: 700;
+    white-space: nowrap
+}
+
+#write table tbody tr:hover td {
+    background-color: var(--element-color-soo-shallow)
+}
+
+#write table tbody td:hover {
+    background-color: var(--element-color-soo-shallow);
+    color: var(--element-color-deep);
+    box-shadow: inset 0 0 0 1px var(--element-color-shallow);
+    cursor: default
+}
+
+#write .footnote-word {
+    font-weight: 400;
+    color: #595959
+}
+
+#write .footnote-ref {
+    font-weight: 400;
+    color: #595959
+}
+
+#write .footnote-item em {
+    font-size: 14px;
+    color: #595959;
+    display: block;
+    background: 0 0
+}
+
+#write sup.md-footnote {
+    font-size: 9px;
+    padding: 1px 5px;
+    top: -11px;
+    left: 3px;
+    background-color: rgba(238, 238, 238, .7);
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer
+}
+
+.md-alert {
+    padding: 5px 10px;
+    margin-bottom: 16px;
+    color: #555;
+    border: none !important;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease, background-color .3s ease
+}
+
+.md-alert:hover {
+    transform: scale(1.01) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+    z-index: 1
+}
+
+.md-alert-text-container {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(2px);
+    padding: 2px 10px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .03);
+    position: relative;
+    z-index: 2
+}
+
+.md-alert-text-container::after {
+    margin-right: 0
+}
+
+.md-alert::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    bottom: -12px;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    opacity: .12;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 0;
+    transition: all .4s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+.md-alert:hover::after {
+    transform: rotate(0) scale(1.1);
+    opacity: .2;
+    right: 0;
+    bottom: -4px
+}
+
+.md-alert-text svg {
+    fill: currentColor;
+    position: relative;
+    top: 1px;
+    margin-right: 5px;
+    width: 1em;
+    height: 1em
+}
+
+.md-alert.md-alert-note {
+    background-color: rgba(108, 92, 231, .1)
+}
+
+.md-alert-text-note {
+    color: #6c5ce7
+}
+
+.md-alert.md-alert-note:hover {
+    background-color: rgba(108, 92, 231, .15)
+}
+
+.md-alert.md-alert-note::after {
+    content: "📝"
+}
+
+.md-alert.md-alert-tip {
+    background-color: rgba(0, 184, 148, .1)
+}
+
+.md-alert-text-tip {
+    color: #00b894
+}
+
+.md-alert.md-alert-tip:hover {
+    background-color: rgba(0, 184, 148, .15)
+}
+
+.md-alert.md-alert-tip::after {
+    content: "💡"
+}
+
+.md-alert.md-alert-warning {
+    background-color: rgba(253, 203, 110, .15)
+}
+
+.md-alert-text-warning {
+    color: #e17055
+}
+
+.md-alert.md-alert-warning:hover {
+    background-color: rgba(253, 203, 110, .2)
+}
+
+.md-alert.md-alert-warning::after {
+    content: "⚠️"
+}
+
+.md-alert.md-alert-important {
+    background-color: rgba(255, 118, 117, .12)
+}
+
+.md-alert-text-important {
+    color: #ff7675
+}
+
+.md-alert.md-alert-important:hover {
+    background-color: rgba(255, 118, 117, .18)
+}
+
+.md-alert.md-alert-important::after {
+    content: "📌"
+}
+
+.md-alert.md-alert-caution {
+    background-color: rgba(214, 48, 49, .08)
+}
+
+.md-alert-text-caution {
+    color: #d63031
+}
+
+.md-alert.md-alert-caution:hover {
+    background-color: rgba(214, 48, 49, .12)
+}
+
+.md-alert.md-alert-caution::after {
+    content: "🔥"
+}
+
+.md-toc {
+    margin: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, .4);
+    background-image: radial-gradient(circle at -22% -42%, var(--element-color-so-shallow), transparent 42%), radial-gradient(circle at 100% 170%, var(--element-color-shallow), transparent 42%);
+    background-repeat: no-repeat;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .6);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .05);
+    border-radius: 16px;
+    font-size: 15px;
+    color: #555;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease
+}
+
+.md-toc:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .1)
+}
+
+.md-toc:before {
+    content: "目录";
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--element-color-deep);
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    border-bottom: 1px dashed rgba(0, 0, 0, .08);
+    padding-bottom: 15px
+}
+
+.md-toc-item {
+    display: block;
+    line-height: 1.8em;
+    color: #666;
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 50px;
+    margin-bottom: 4px;
+    position: relative;
+    transition: all .2s cubic-bezier(.25, .8, .25, 1)
+}
+
+.md-toc-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%
+}
+
+.md-toc-h1 {
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, .4)
+}
+
+.md-toc-h2 {
+    margin-left: 1em;
+    font-size: .95rem
+}
+
+.md-toc-h3 {
+    margin-left: 2em;
+    font-size: .9rem;
+    color: #777
+}
+
+.md-toc-h4 {
+    margin-left: 3em;
+    font-size: .85em;
+    opacity: .8
+}
+
+.md-toc-h5 {
+    margin-left: 4em;
+    font-size: .85em;
+    opacity: .7
+}
+
+.md-toc-h6 {
+    margin-left: 5em;
+    font-size: .85em;
+    opacity: .6
+}
+
+.md-toc-item:hover {
+    background-color: rgba(255, 255, 255, .95);
+    color: var(--element-color-deep);
+    padding-left: 20px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05)
+}
+
+.md-tooltip-hide>span {
+    display: none
+}
+
+#typora-sidebar {
+    height: 100%;
+    color: var(--text-color);
+    font-size: .92rem;
+    background-color: var(--bg-color)
+}
+
+#outline-content::-webkit-scrollbar {
+    width: 5px
+}
+
+#file-library::-webkit-scrollbar {
+    width: 5px
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--element-color)
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--element-color-shallow)
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 8px
+}
+
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border,
+.ty-show-search #info-panel-tab-search .info-panel-tab-border {
+    border-radius: 10px;
+    height: 4px;
+    background-color: var(--appui-color)
+}
+
+.file-node-content {
+    line-height: 1.2rem
+}
+
+.file-tree-node.active>.file-node-content {
+    color: var(--appui-color)
+}
+
+span.file-node-title {
+    color: var(--appui-color-text)
+}
+
+.file-node-icon {
+    color: var(--appui-color-icon);
+    padding-right: .2rem
+}
+
+.file-tree-node.active>.file-node-background {
+    font-weight: bolder;
+    border-left: 4px solid var(--appui-color);
+    border-color: var(--appui-color)
+}
+
+.info-panel-tab-title {
+    font-weight: bolder;
+    color: var(--appui-color-text)
+}
+
+#file-library-search-panel {
+    background-color: #fff
+}
+
+#file-library-search-input {
+    border-radius: 3px;
+    border-color: var(--appui-color)
+}
+
+#file-library-search-input:focus {
+    border-width: 2px
+}
+
+#outline-content .outline-h2::after,
+#outline-content .outline-h2>.outline-item::before {
+    content: none !important;
+    display: none !important;
+    border: none !important;
+    background: 0 0 !important
+}
+
+#outline-content .outline-label {
+    border: none !important;
+    background: 0 0 !important;
+    padding-left: 0 !important;
+    margin: 0 !important
+}
+
+#outline-content .outline-item {
+    display: flex !important;
+    align-items: center !important;
+    width: fit-content;
+    max-width: 100%;
+    padding: 6px 12px;
+    margin-bottom: 2px;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    outline: 0;
+    transition: background-color .2s ease, color .2s ease, padding-right .2s ease, box-shadow .2s ease;
+    position: relative;
+    line-height: 1.6
+}
+
+#outline-content .outline-expander {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+    color: inherit
+}
+
+#outline-content .outline-label {
+    flex: 1;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+#outline-content .outline-h1 {
+    margin-top: 10px;
+    margin-bottom: 4px
+}
+
+#outline-content .outline-h2,
+#outline-content .outline-h3,
+#outline-content .outline-h4,
+#outline-content .outline-h5,
+#outline-content .outline-h6 {
+    border-left: 1.5px solid rgba(0, 0, 0, .06);
+    margin-left: 22px;
+    padding-left: 8px
+}
+
+#outline-content .outline-h1>.outline-item {
+    font-size: larger;
+    font-weight: 700;
+    color: var(--element-color-deep)
+}
+
+#outline-content .outline-item:hover {
+    background-color: var(--element-color-soo-shallow);
+    color: var(--element-color-deep);
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-left: none !important;
+    border-right: none !important
+}
+
+div.outline-item-active {
+    background-color: var(--element-color) !important;
+    color: #fff !important;
+    font-weight: 600;
+    box-shadow: 0 4px 10px var(--element-color-so-shallow);
+    transform: none;
+    padding-right: 30px !important;
+    padding-left: 12px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: none !important
+}
+
+#outline-content .outline-item-active::after {
+    content: "✦";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: rgba(255, 255, 255, .9);
+    display: block !important;
+    z-index: 10;
+    animation: outline-twinkle 1.5s infinite alternate
+}
+
+@keyframes outline-twinkle {
+    from {
+        opacity: .7;
+        transform: translateY(-50%) scale(.9)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1)
+    }
+}
+
+.typora-export-content .outline-content::before {
+    content: "目录";
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    z-index: -1
+}
+
+.typora-export-sidebar .outline-content {
+    padding-top: 60px !important;
+    padding-left: 10px !important;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 30px;
+    box-sizing: border-box
+}
+
+.typora-export-sidebar .outline-content::before {
+    content: "目录";
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--element-color-deep);
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    z-index: 10;
+    letter-spacing: 2px
+}
+
+.typora-export-sidebar .outline-h1 {
+    margin-top: 10px !important;
+    margin-bottom: 4px !important;
+    margin-left: 0 !important
+}
+
+.typora-export-sidebar .outline-h1>.outline-item {
+    font-size: 1.1em !important;
+    font-weight: 700 !important;
+    color: var(--element-color-deep) !important
+}
+
+.typora-export-sidebar .outline-h2,
+.typora-export-sidebar .outline-h3,
+.typora-export-sidebar .outline-h4,
+.typora-export-sidebar .outline-h5,
+.typora-export-sidebar .outline-h6 {
+    border-left: 1.5px solid rgba(0, 0, 0, .06) !important;
+    margin-left: 15px !important;
+    padding-left: 8px !important;
+    list-style: none !important
+}
+
+.typora-export-sidebar .outline-item {
+    display: flex !important;
+    align-items: center !important;
+    width: fit-content !important;
+    max-width: 95% !important;
+    padding: 6px 12px !important;
+    margin: 2px 0 !important;
+    color: inherit !important;
+    cursor: pointer;
+    text-decoration: none !important;
+    border-radius: 50px !important;
+    border: none !important;
+    transition: all .2s ease;
+    line-height: 1.6;
+    overflow: visible !important
+}
+
+.typora-export-sidebar .outline-label {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    flex: 0 1 auto !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.typora-export-sidebar .outline-expander {
+    width: 16px !important;
+    text-align: center;
+    margin-right: 4px;
+    flex-shrink: 0
+}
+
+.typora-export .outline-expander::before {
+    content: "▸" !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 14px !important;
+    color: #999;
+    top: 0 !important;
+    display: inline-block;
+    transition: transform .2s
+}
+
+.typora-export .outline-expander:hover::before,
+.typora-export .outline-item-open>.outline-item>.outline-expander::before {
+    content: "▾" !important;
+    color: var(--element-color-deep)
+}
+
+.typora-export .outline-item-single .outline-expander::before {
+    display: none !important
+}
+
+.typora-export-sidebar .outline-item:hover {
+    background-color: var(--element-color-soo-shallow) !important;
+    color: var(--element-color-deep) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: none !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item {
+    background-color: var(--element-color) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 10px var(--element-color-so-shallow);
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+    margin-left: 0 !important;
+    border: none !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item .outline-label {
+    color: #fff !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item .outline-expander::before {
+    color: rgba(255, 255, 255, .8) !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item::after {
+    content: "✦";
+    position: static !important;
+    transform: none !important;
+    margin-left: 8px !important;
+    flex-shrink: 0;
+    display: inline-block !important;
+    line-height: 1;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    color: rgba(255, 255, 255, .9);
+    z-index: 10;
+    animation: outline-twinkle 1.5s infinite alternate
+}
+
+@media screen {
+    body.typora-export {
+        background-color: transparent
+    }
+}
+
+.typora-export-sidebar {
+    position: fixed;
+    margin-top: 0 !important;
+    top: 10px;
+    bottom: 10px;
+    left: 20px;
+    width: 320px;
+    background-color: var(--glass-bg-color);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .13);
+    z-index: 100;
+    overflow: hidden;
+    color: #555
+}
+
+.typora-export-sidebar .outline-content {
+    padding-top: 60px !important;
+    padding-left: 15px !important;
+    padding-right: 5px !important;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none
+}
+
+.typora-export #write {
+    margin: 20px auto;
+    max-width: 950px;
+    width: 90%;
+    min-height: calc(100vh - 40px);
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+    padding: 60px 80px
+}
+
+.typora-export-sidebar+#write {
+    margin-left: 350px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: auto;
+    max-width: none;
+    min-height: calc(100vh - 20px)
+}
+
+@media screen and (max-width:1200px) {
+    .typora-export-sidebar {
+        display: none
+    }
+
+    .typora-export #write,
+    .typora-export-sidebar+#write {
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        padding: 20px;
+        min-height: 100vh
+    }
+}
+
+@media print {
+    @page {
+        margin: 10mm;
+        size: A4
+    }
+
+    body {
+        background-color: transparent !important
+    }
+
+    body {
+        margin: 0 !important;
+        width: 100% !important
+    }
+
+    .typora-export #write {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: 0 0 !important
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important
+    }
+
+    #write::before {
+        display: block !important;
+        opacity: .1 !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        -webkit-mask-image: var(--bg-style) !important;
+        mask-image: var(--bg-style) !important;
+        background-color: var(--element-color) !important;
+        pointer-events: none;
+        z-index: -1
+    }
+
+    p {
+        line-height: 1.5rem
+    }
+
+    figure,
+    pre {
+        page-break-inside: avoid
+    }
+
+    ol,
+    ul {
+        page-break-inside: auto !important;
+        break-inside: auto !important
+    }
+
+    li {
+        page-break-inside: avoid;
+        break-inside: avoid
+    }
+
+    pre {
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+        white-space: pre-wrap
+    }
+
+    blockquote {
+        page-break-inside: auto !important;
+        break-inside: auto !important
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        page-break-inside: avoid !important
+    }
+
+    p {
+        orphans: 2;
+        widows: 2
+    }
+
+    .md-toc {
+        background-image: none
+    }
+
+    #write li:before {
+        border-color: transparent
+    }
+}
+
+@media print {
+    .page-break {
+        page-break-after: always;
+        break-after: always;
+        height: 0;
+        display: block;
+        visibility: hidden
+    }
+}
+
+.dropdown-menu.context-menu {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, .85) !important;
+    border: 1px solid rgba(255, 255, 255, .8) !important;
+    border-radius: 12px !important;
+    padding: 6px 0 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .04), 0 16px 40px rgba(0, 0, 0, .08) !important
+}
+
+.btn:focus {
+    outline-color: var(--element-color-shallow)
+}
+
+body .md-table-resize-popover {
+    width: max-content !important;
+    max-width: none !important;
+    height: auto !important;
+    padding: 12px !important;
+    background-color: var(--bg-color) !important;
+    border: none;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .12) !important
+}
+
+body .md-table-resize-popover .arrow {
+    display: none !important
+}
+
+body .md-table-resize-popover .md-grid-board-wrap {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 !important
+}
+
+body .md-table-resize-popover .md-grid-board {
+    width: auto !important;
+    border-collapse: separate !important;
+    border-spacing: 3px !important;
+    margin: 0 auto 10px auto !important
+}
+
+body .md-table-resize-popover .md-grid-board td {
+    padding: 0 !important;
+    background: 0 0 !important;
+    border: none !important
+}
+
+body .md-table-resize-popover .md-grid-board a {
+    display: block !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 !important;
+    border-radius: 3px !important;
+    background-color: color-mix(in srgb, var(--text-color), transparent 90%) !important;
+    border: 1px solid transparent !important;
+    box-sizing: border-box !important;
+    transition: all .2s cubic-bezier(.34, 1.56, .64, 1) !important
+}
+
+body .md-table-resize-popover .md-grid-board td.md-grid-ext {
+    background: 0 0 !important
+}
+
+body .md-table-resize-popover .md-grid-board td.md-grid-ext a {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 4px color-mix(in srgb, var(--primary-color), transparent 60%) !important;
+    opacity: .9 !important
+}
+
+body .md-table-resize-popover .md-grid-board td.md-grid-ext a:hover {
+    opacity: 1 !important;
+    transform: scale(1.15) !important;
+    border-radius: 5px !important
+}
+
+body .md-table-resize-popover .popover-title {
+    background: 0 0 !important;
+    border: none !important;
+    border-top: 1px dashed color-mix(in srgb, var(--element-color), var(--text-color) 20%) !important;
+    padding: 10px 0 0 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    color: var(--element-color) !important;
+    font-size: 13px !important;
+    font-family: var(--monospace, monospace) !important;
+    font-weight: 400 !important
+}
+
+body .md-table-resize-popover input {
+    width: 36px !important;
+    height: 24px !important;
+    padding: 0 !important;
+    text-align: center !important;
+    border: 1px solid var(--element-color-so-shallow) !important;
+    border-radius: 4px !important;
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+    font-family: var(--monospace, monospace) !important;
+    font-size: 14px !important;
+    outline: 0 !important;
+    transition: all .3s ease !important;
+    box-shadow: none !important
+}
+
+body .md-table-resize-popover input:focus {
+    border-color: var(--primary-color) !important;
+    background-color: color-mix(in srgb, var(--primary-color), transparent 95%) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color), transparent 80%) !important
+}@import url();
+
+:root {
+  /* 标题后小图标，借鉴自思源笔记主题——Savor */
+  --h1-icon-shape: url("data:image/svg+xml;utf8,<svg fill='rgba(255, 176, 176, 0.5)' height='24' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M4.8 29.714v0c-1.371 0-2.514-1.143-2.514-2.514v0c0-1.371 1.143-2.514 2.514-2.514v0c1.371 0 2.514 1.143 2.514 2.514v0c0.114 1.371-1.029 2.514-2.514 2.514z'/></svg>") no-repeat center;
+  --h2-icon-shape: url("data:image/svg+xml;utf8,<svg fill='rgba(255, 176, 176, 0.5)' height='24' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>") no-repeat center;
+  --h3-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+  --h4-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286z'/></svg>");
+  --h5-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286zM4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+  --h6-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 16c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286z'/></svg>");
+
+  /* 文档背景样式 */
+  /* 1. 交叉斜线 */
+  --bg-shape-cross: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v30H0z' fill='none'/%3E%3Cpath d='M0 0L15 15M30 0L15 15M0 30L15 15M30 30L15 15' stroke='black' stroke-width='0.4'/%3E%3C/svg%3E");
+  /* 2. 星点图案 */
+  --bg-shape-star: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M10 10l2-6l2 6l6 2l-6 2l-2 6l-2-6l-6-2Z' fill='black'/%3E%3Cpath d='M30 15l1-3l1 3l3 1l-3 1l-1 3l-1-3l-3-1Z' fill='black'/%3E%3Cpath d='M25 30l1.5-4.5l1.5 4.5l4.5 1.5l-4.5 1.5l-1.5 4.5l-1.5-4.5l-4.5-1.5Z' fill='black'/%3E%3C/svg%3E");
+  /* 3. 六边形图案 */
+  --bg-shape-hex: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M10 5l10 0l5 8.66l-5 8.66l-10 0l-5-8.66Z' fill='none' stroke='black' stroke-width='0.4'/%3E%3Cpath d='M20 22.32l10 0l5 8.66l-5 8.66l-10 0l-5-8.66Z' fill='none' stroke='black' stroke-width='0.4'/%3E%3C/svg%3E");
+  /* 4. 十字圆点 */
+  --bg-shape-dot: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7.5' cy='7.5' r='0.5' fill='black'/%3E%3Ccircle cx='7.5' cy='2.5' r='0.5' fill='black'/%3E%3Ccircle cx='7.5' cy='12.5' r='0.5' fill='black'/%3E%3Ccircle cx='2.5' cy='7.5' r='0.5' fill='black'/%3E%3Ccircle cx='12.5' cy='7.5' r='0.5' fill='black'/%3E%3C/svg%3E");
+  /* 5. 三角形 */
+  --bg-shape-tri: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v30H0z' fill='none'/%3E%3Cpath d='M0 0L30 0L15 15Z' fill='black'/%3E%3Cpath d='M30 30L0 30L15 15Z' fill='black'/%3E%3C/svg%3E");
+  /* 6. 方格网 */
+  --bg-shape-grid: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0z' fill='none'/%3E%3Cpath d='M20 0v20M0 20h20' stroke='black' stroke-width='0.7'/%3E%3C/svg%3E");
+  /* 7. 无背景 (纯白背景) */
+  --bg-shape-none: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=");
+
+  /* 文档背景样式  none 无背景*/
+  --bg-style: var(--bg-shape-cross);
+
+  /* 自动编号格式设置 无需自动编号可全部注释掉或部分注释掉*/
+  /* --autonum-h1: counter(h1) ". ";
+  --autonum-h2: counter(h1) "." counter(h2) ". ";
+  --autonum-h3: counter(h1) "." counter(h2) "." counter(h3) ". ";
+  --autonum-h4: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) ". ";
+  --autonum-h5: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". ";
+  --autonum-h6: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "; */
+
+  /* 下面是文章内Toc目录自动编号，与上面一样即可 */
+  /* --autonum-h1toc: counter(h1toc) ". ";
+  --autonum-h2toc: counter(h1toc) "." counter(h2toc) ". ";
+  --autonum-h3toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) ". ";
+  --autonum-h4toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) "." counter(h4toc) ". ";
+  --autonum-h5toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) "." counter(h4toc) "." counter(h5toc) ". ";
+  --autonum-h6toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) "." counter(h4toc) "." counter(h5toc) "." counter(h6toc) ". "; */
+
+
+  
+  /* 文章区域的最大宽度，可以是多少px也可以是百分比 */
+  --max-width: 950px; 
+
+  
+  /* 主题颜色 */
+
+  --head-title-color: #3db8bf;
+  /* 标题主色 */
+  --head-title-h2-color: #fff;
+  --head-title-h2-background: linear-gradient(to right,
+      #80F7C4,#3DB8D3, #80F7C4);
+  /* 二级标题主色，因为二级标题是背景色的，所以单独设置 */
+
+  --element-color: #3db8bf;
+  /* 元素主色 */
+  --element-color-deep: #089ba3;
+  /* 元素深色 */
+  --element-color-shallow: #7aeaf0;
+  /* 元素浅色 */
+  --element-color-so-shallow: #7aeaf077;
+  /* 元素很浅色 */
+  --element-color-soo-shallow: #7aeaf018;
+  /* 元素非常浅色 */
+
+  /* 毛玻璃底色 透明度一定要很低 */
+  --glass-bg-color:#8ff9ff14;
+  
+
+  --element-color-linecode: #089ba3;
+  /* 行内代码文字色 */
+  --element-color-linecode-background: #7aeaf018;
+  /* 行内代码背景色 */
+
+  /* 程序本体UI */
+  --appui-color: #3db8bf;
+  /* 程序UI主题色 */
+  --appui-color-icon: #3db8bf;
+  /* 程序UI图标颜色 */
+  --appui-color-text: #333;
+  /* 程序UI文字色 */
+  --primary-color: #3db8bf;
+
+  --rawblock-edit-panel-bd: var(--element-color-soo-shallow);
+}
+
+
+
+</style><title>护理管理质量管理</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#护理管理质量管理">护理管理质量管理</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-护理质控管理">1 护理质控管理</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#11-质控体系架构">1.1 质控体系架构</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#功能简介对三级质控人员权限进行管理">【功能简介】对三级质控人员权限进行管理。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#操作描述导航栏上点击质控管理→质控体系架构后进入质控体系架构界面">【操作描述】导航栏上，点击“<code>质控管理</code>→<code>质控体系架构</code>”后，进入质控体系架构界面</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#界面图示">【界面图示】</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#12-质控计划管理">1.2 质控计划管理</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#功能简介该界面用于维护质控计划">【功能简介】该界面用于<strong>维护质控计划</strong>。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#操作描述-导航栏上点击质控管理→质控计划管理后进入质控计划管理主界面">【操作描述】 导航栏上，点击“质控管理→质控计划管理”后，进入质控计划管理主界面。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#视频操作">【视频操作】</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#13-新建质控计划">1.3 新建质控计划</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#功能简介新建质控计划">【功能简介】新建质控计划。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#操作描述">【操作描述】 </a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#14-质控评分管理">1.4 质控评分管理</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#功能简介对质控评分进行管理">【功能简介】对质控评分进行管理。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#操作描述-2">【操作描述】 </a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#界面图示-2">【界面图示】</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#15-新建质控评分">1.5 新建质控评分</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#功能简介">【功能简介】</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#操作描述-3">【操作描述】</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#界面图示-3">【界面图示】</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#16-质控考核结果">1.6 质控考核结果</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#功能简介对质控考核结果进行管理">【功能简介】对质控考核结果进行管理。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#操作描述-4">【操作描述】 </a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#界面图示-4">【界面图示】</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#17-措施整改录入">1.7 措施整改录入</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#功能简介对质控考核结果进行措施整改录入">【功能简介】对质控考核结果进行措施整改录入。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#操作描述-5">【操作描述】</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#界面图示-5">【界面图示】</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#18-追踪检查">1.8 追踪检查</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#功能简介-2">【功能简介】</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#操作描述-6">【操作描述】</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#界面图示-6">【界面图示】</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#19质控追踪结果">1.9质控追踪结果</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#功能简介-3">【功能简介】</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#操作描述-7">【操作描述】 </a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#界面图示-7">【界面图示】</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></ul></li></div></div><div id='write'  class=''><h1 id='护理管理质量管理'><span>护理管理质量管理</span></h1><h2 id='1-护理质控管理'><span>1 护理质控管理</span></h2><h3 id='11-质控体系架构'><span>1.1 质控体系架构</span></h3><h4 id='功能简介对三级质控人员权限进行管理'><span>【功能简介】对三级质控人员权限进行管理。</span></h4><h4 id='操作描述导航栏上点击质控管理→质控体系架构后进入质控体系架构界面'><span>【操作描述】导航栏上，点击“</span><code>质控管理</code><span>→</span><code>质控体系架构</code><span>”后，进入质控体系架构界面</span></h4><ol start='' ><li><p><span>该界面仅</span><strong><span>护理部</span></strong><span>、</span><strong><span>护士长角色</span></strong><span>可见：护理部可维护全院质控权限，护士长可维护登录病区质控权限。</span></p></li><li><p><span>质控片区以按照护理部，片区，科室逐级展现，片区树默认</span><strong><span>自动展开</span></strong><span>。</span></p></li><li><p><span>在</span><strong><span>护理单元</span></strong><span>检索框，输入片区名称或首字母，检索框下方可显示对应的护理单元，点击节点后，右侧将显示该片区下的人员列表。</span><code>如图1-1</code></p></li><li><p><span>在</span><strong><span>左侧上方的检索框</span></strong><span>中，输入工号或姓名，右侧将显示对应的人员检索结果列表。</span><code>如图1-1</code></p></li><li><p><span>在左侧列表</span><strong><span>选择片区节点</span></strong><span>后，新增按钮可用（进入该界面默认为不可点击），点击</span><strong><span>新增按钮弹出新增人员界面</span></strong><span>（</span><code>如图1-2、图1-3</code><span>）。</span><strong><span>选择对应人员</span></strong><span>后，点击【保存】，</span><strong><span>新增人员</span></strong><span>将属于</span><strong><span>左侧片区节点</span></strong><span>，并且拥有该片区质控权限。</span></p></li><li><p><span>在左侧列表选择片区节点后，【删除】可用（进入该界面默认为不可点击），如未选择人员，点击【删除】提示“请选择要删除的人员”。勾选列表中人员后，点击【删除】，提示“此操作将永久删除该类型，是否继续？”，点击【确定】后删除。（</span><code>图1-4</code><span>）</span></p></li></ol><h4 id='界面图示'><span>【界面图示】</span></h4><p><img src="assets/image-20260331114247259.png" referrerpolicy="no-referrer" alt="image-20260331114247259"></p><center>图 1-1质控体系检索功能</center><p><img src="assets/image-20260331113242697.png" referrerpolicy="no-referrer" alt="image-20260331113242697"></p><center>图 1-2质控体系创建质量人员</center><p><img src="assets/image-20260331114717510.png" referrerpolicy="no-referrer" alt="image-20260331114717510"></p><center>图 1-3质控体系选择质控人员</center><p><img src="assets/image-20260331115115581.png" alt="image-20260331115115581"  /></p><center>图1-4删除质控人员</center><h3 id='12-质控计划管理'><span>1.2 质控计划管理</span></h3><h4 id='功能简介该界面用于维护质控计划'><span>【功能简介】该界面用于</span><strong><span>维护质控计划</span></strong><span>。</span></h4><h4 id='操作描述-导航栏上点击质控管理→质控计划管理后进入质控计划管理主界面'><span>【操作描述】 导航栏上，点击“质控管理→质控计划管理”后，进入质控计划管理主界面。</span></h4><ol start='' ><li><p><strong><span>添加计划分类</span></strong></p><ul><li><p><strong><span>操作路径</span></strong><span>: 在计划分类树中，选择</span><strong><span>根节点</span></strong><span>或某个</span><strong><span>计划分类节点</span></strong><span>。</span></p></li><li><p><strong><span>操作步骤</span></strong><span>:</span></p><ol start='' ><li><p><span>点击【分类】按钮。</span></p></li><li><p><span>在弹出的“计划分类添加”界面中输入</span><strong><span>分类名称</span></strong><span>。</span></p></li><li><p><span>点击【保存】。</span></p></li></ol></li><li><p><strong><span>预期结果</span></strong><span>: 系统提示“</span><strong><span>保存成功</span></strong><span>”。</span></p></li></ul></li><li><p><strong><span>添加计划组</span></strong></p><ul><li><p><strong><span>操作路径</span></strong><span>: 在计划分类树中，选择</span><strong><span>根节点</span></strong><span>、</span><strong><span>计划组</span></strong><span>或</span><strong><span>计划分类</span></strong><span>节点。</span></p></li><li><p><strong><span>操作限制与步骤</span></strong><span>:</span></p><ul><li><p><span>选择</span><strong><span>根节点</span></strong><span>时，【添加】按钮</span><strong><span>不可用</span></strong><span>。</span></p></li><li><p><span>选择</span><strong><span>计划组</span></strong><span>节点时，点击【添加】会提示“</span><strong><span>添加失败，已是分类子集</span></strong><span>”。</span></p></li><li><p><span>选择</span><strong><span>计划分类</span></strong><span>节点时：</span></p><ol start='' ><li><p><span>点击【添加】按钮。</span></p></li><li><p><span>在弹出的“计划组添加”界面中输入</span><strong><span>计划组名称</span></strong><span>。</span></p></li><li><p><span>点击【保存】。</span></p></li></ol></li></ul></li><li><p><strong><span>预期结果</span></strong><span>: 在计划分类节点下保存成功后，系统提示“</span><strong><span>保存成功</span></strong><span>”。</span></p></li></ul></li><li><p><strong><span>编辑节点名称</span></strong></p><ul><li><p><strong><span>操作路径</span></strong><span>: 在计划分类树中，选择</span><strong><span>根节点</span></strong><span>、</span><strong><span>计划分类</span></strong><span>或</span><strong><span>计划组</span></strong><span>节点。</span></p></li><li><p><strong><span>操作限制与步骤</span></strong><span>:</span></p><ul><li><p><span>选择</span><strong><span>根节点</span></strong><span>时，【编辑】按钮</span><strong><span>不可用</span></strong><span>。</span></p></li><li><p><span>选择</span><strong><span>计划分类</span></strong><span>或</span><strong><span>计划组</span></strong><span>节点时：</span></p><ol start='' ><li><p><span>点击【编辑】按钮。</span></p></li><li><p><span>在弹出的编辑界面中输入新的</span><strong><span>节点名称</span></strong><span>。</span></p></li><li><p><span>点击【保存】。</span></p></li></ol></li></ul></li><li><p><strong><span>预期结果</span></strong><span>: 系统提示“</span><strong><span>保存成功！</span></strong><span>”。</span></p></li></ul></li><li><p><strong><span>删除节点</span></strong></p><ul><li><p><strong><span>操作路径</span></strong><span>: 在计划分类树中，选择要删除的</span><strong><span>计划分类</span></strong><span>或</span><strong><span>计划组</span></strong><span>节点，点击【删除】。</span></p></li><li><p><strong><span>删除计划分类</span></strong><span>:</span></p><ul><li><p><strong><span>判断条件</span></strong><span>: 系统判断该分类</span><strong><span>是否包含子节点</span></strong><span>。</span></p></li><li><p><strong><span>预期结果</span></strong><span>:</span></p><ul><li><p><span>如果</span><strong><span>有子节点</span></strong><span>，提示“</span><strong><span>删除失败，请先删除子节点</span></strong><span>”。</span></p></li><li><p><span>如果</span><strong><span>无子节点</span></strong><span>，提示“</span><strong><span>删除成功！</span></strong><span>”。</span></p></li></ul></li></ul></li><li><p><strong><span>删除计划组</span></strong><span>:</span></p><ul><li><p><strong><span>判断条件</span></strong><span>: 系统判断该计划组</span><strong><span>下是否有计划</span></strong><span>。</span></p></li><li><p><strong><span>预期结果</span></strong><span>:</span></p><ul><li><p><span>如果</span><strong><span>有计划</span></strong><span>，提示“</span><strong><span>删除失败！请先删除组内计划！</span></strong><span>”。</span></p></li><li><p><span>如果</span><strong><span>无计划</span></strong><span>，提示“</span><strong><span>删除成功！</span></strong><span>”。</span></p></li></ul></li></ul></li></ul></li><li><p><strong><span>新建计划</span></strong></p><ul><li><p><strong><span>前提条件</span></strong><span>: 在左侧计划树中选择一个</span><strong><span>计划组</span></strong><span>，此时【新建计划】按钮变为可用。</span></p></li><li><p><strong><span>操作步骤</span></strong><span>:</span></p><ol start='' ><li><p><span>点击【新建计划】。</span></p></li><li><p><span>在弹出的“新建计划”界面中，填写以下必填项：</span><strong><span>计划名称、督察周期、开始时间、结束时间、护理单元、评分人员、质控标准、评分对象</span></strong><span>。</span></p></li><li><p><span>点击【保存】。</span></p></li></ol></li><li><p><strong><span>预期结果</span></strong><span>: 系统提示“</span><strong><span>保存成功。</span></strong><span>”。</span></p></li></ul></li><li><p><strong><span>撤销已发布计划</span></strong></p><ul><li><p><strong><span>针对未被使用的计划</span></strong><span>:</span></p><ul><li><p><span>点击【撤销】按钮，可撤销其发布状态。</span></p></li><li><p><strong><span>预期结果</span></strong><span>: 系统提示“</span><strong><span>操作成功</span></strong><span>”。</span></p></li></ul></li><li><p><strong><span>针对已被使用的计划</span></strong><span>:</span></p><ul><li><p><span>点击【撤销】按钮，</span><strong><span>无法</span></strong><span>撤销其发布状态。</span></p></li><li><p><strong><span>预期结果</span></strong><span>: 系统提示“</span><strong><span>该计划已经使用，不允许撤销！</span></strong><span>”。</span></p></li></ul></li></ul></li><li><p><strong><span>发布计划</span></strong></p><ul><li><p><strong><span>前提条件</span></strong><span>: 存在</span><strong><span>未发布</span></strong><span>的计划。</span></p></li><li><p><strong><span>操作</span></strong><span>: 点击【发布】按钮。</span></p></li><li><p><strong><span>预期结果</span></strong><span>: 计划被发布，系统提示“</span><strong><span>操作成功！</span></strong><span>”。</span></p></li></ul></li><li><p><strong><span>预览计划</span></strong></p><ul><li><p><strong><span>操作</span></strong><span>: 在计划管理界面，点击【预览】按钮。</span></p></li><li><p><strong><span>预期结果</span></strong><span>: 系统显示“计划预览”页面。该页面以</span><strong><span>树形结构</span></strong><span>展示该计划所选择的</span><strong><span>质控标准评分项</span></strong><span>。</span></p></li></ul></li><li><p><strong><span>删除计划</span></strong></p><ul><li><p><strong><span>针对未被评分的计划</span></strong><span>:</span></p><ul><li><p><span>点击【删除】按钮可直接删除。</span></p></li><li><p><strong><span>预期结果</span></strong><span>: 系统提示“</span><strong><span>删除成功！</span></strong><span>”。</span></p></li></ul></li><li><p><strong><span>针对已被用作质控评分的计划</span></strong><span>:</span></p><ul><li><p><span>点击【删除】按钮时，系统会弹出二次确认提示：“</span><strong><span>该计划已经使用，是否继续?</span></strong><span>”</span></p></li><li><p><span>如果用户点击</span><strong><span>确定</span></strong><span>，则执行删除操作，</span><strong><span>该计划及其下的所有评分均会被删除</span></strong><span>。</span></p></li></ul></li></ul></li></ol><h4 id='视频操作'><span style="background-color: yellow; font-size:28px; font-weight: bold;"><span>【视频操作】</span></span></h4><video 
+  src="./assets/2026-03-31 11-54-50.mp4" 
+  autoplay 
+  muted 
+  loop 
+  controls
+>
+  您的浏览器不支持HTML5视频
+</video><center>视频1</center><h3 id='13-新建质控计划'><span>1.3 新建质控计划</span></h3><h4 id='功能简介新建质控计划'><span>【功能简介】新建质控计划。</span></h4><h4 id='操作描述'><span>【操作描述】 </span></h4><ol start='' ><li><p><strong><span>操作步骤</span></strong></p><ul><li><p><span>在界面中点击【新建计划】按钮。</span></p></li><li><p><span>系统将弹出一个名为“新建质控计划”的窗口。</span></p></li><li><p><span>在该窗口中，需录入或选择以下信息字段：</span></p><ul><li><p><strong><span>计划名称</span></strong></p></li><li><p><strong><span>督查周期</span></strong></p></li><li><p><strong><span>开始时间</span></strong></p></li><li><p><strong><span>结束时间</span></strong></p></li><li><p><strong><span>护理单元</span></strong></p></li><li><p><strong><span>评分人员</span></strong><span> </span><strong><span>（必填：为空会导致评分人员无法找到这条任务）</span></strong></p></li><li><p><strong><span>质控标准</span></strong></p></li><li><p><strong><span>评分对象</span></strong><span>（</span><strong><span>科室、个人</span></strong><span>）</span></p></li><li><p><strong><span>评分次数</span></strong></p></li></ul></li><li><p><span>信息填写完毕后，点击窗口内的【保存】按钮。</span></p></li></ul></li><li><p><strong><span>预期结果</span></strong></p><ul><li><p><span>系统将保存录入的质控计划信息。</span></p></li><li><p><span>通常，系统会关闭“新建质控计划”窗口，并在主界面给出“</span><strong><span>保存成功</span></strong><span>”或类似的操作成功提示。</span></p></li></ul></li></ol><p><span>【界面图示】</span></p><p><img src="assets/image-20260331120606154.png" referrerpolicy="no-referrer" alt="image-20260331120606154"></p><center>图1-5 编辑质控计划</center><h3 id='14-质控评分管理'><span>1.4 质控评分管理</span></h3><h4 id='功能简介对质控评分进行管理'><span>【功能简介】对质控评分进行管理。</span></h4><h4 id='操作描述-2'><span>【操作描述】 </span></h4><ol start='' ><li><p><strong><span>选择层级进行评分</span></strong></p><ul><li><p><span>首先，在评分功能中</span><strong><span>选择要进行评分的层级</span></strong><span>（如个人、科室、护理单元等），系统将根据所选层级显示对应的评分界面和数据。(</span><strong><span>按月进行分组</span></strong><span>)</span></p></li></ul></li><li><p><strong><span>筛选评分计划</span></strong></p><ul><li><p><span>可通过指定筛选条件，快速定位需要处理的评分计划。可用的筛选条件包括：</span></p><ul><li><p><strong><span>科室</span></strong></p></li><li><p><strong><span>时间范围</span></strong></p></li><li><p><strong><span>计划名称</span></strong></p></li></ul></li><li><p><img src="assets/image-20260331143516726.png" referrerpolicy="no-referrer" alt="image-20260331143516726"></p></li></ul></li><li><p><strong><span>查看科室评分记录</span></strong></p><ul><li><p><span>在评分界面的下方，通常为科室列表或树形结构。</span><strong><span>选中一个科室</span></strong><span>后，下方的列表或表格区域会</span><strong><span>显示该科室对应的所有评分记录</span></strong><span>。</span></p></li></ul><p><img src="assets/image-20260331144716543.png" referrerpolicy="no-referrer" alt="image-20260331144716543"></p></li><li><p><strong><span>查看评分详情</span></strong></p><ul><li><p><span>在评分记录列表中，每条记录的右侧会有操作按钮。点击</span><strong><span>对应记录右侧的【查看】按钮</span></strong><span>，系统会弹出一个</span><strong><span>评分记录详情界面</span></strong><span>，用于展示该次评分的完整信息、分数及评语等。</span></p></li></ul></li><li><p><strong><span>删除未下发的评分</span></strong></p><ul><li><p><span>在评分记录列表中，针对状态为“</span><strong><span>未下发</span></strong><span>”的记录，其操作列会显示【删除】按钮。点击此【删除】按钮，可以</span><strong><span>删除该条未下发的评分记录</span></strong><span>。</span></p></li></ul></li></ol><h4 id='界面图示-2'><span>【界面图示】</span></h4><p><img src="assets/image-20260331145204990.png" referrerpolicy="no-referrer" alt="image-20260331145204990"></p><center>图1-6质控评分管理</center><h3 id='15-新建质控评分'><span>1.5 新建质控评分</span></h3><h4 id='功能简介'><span>【功能简介】</span></h4><p><span>	</span><span>新建质控评分。</span></p><h4 id='操作描述-3'><span>【操作描述】</span></h4><ol start='' ><li><p><strong><span>发起新建评分</span></strong></p><ul><li><p><span>点击【新建评分】按钮，系统将弹出“新建质控评分”窗口。</span></p></li></ul></li><li><p><strong><span>选择考核日期与整体备注</span></strong></p><ul><li><p><span>在窗口中首先</span><strong><span>选择本次评分的“考核日期”</span></strong><span>。</span></p></li><li><p><span>可以录入针对本次评分整体的</span><strong><span>评分备注</span></strong><span>。</span></p></li></ul></li><li><p><strong><span>对不合格项目进行扣分操作</span></strong></p><ul><li><p><span>针对具体的</span><strong><span>不合格项目</span></strong><span>：</span></p><ol start='' ><li><p><span>点击该不合格项旁的 </span><strong><span>[-] 按钮</span></strong><span>进行扣分。</span></p></li><li><p><span>在弹出的操作界面中，可以录入</span><strong><span>例次</span></strong><span>、</span><strong><span>选择问题责任人</span></strong><span>、</span><strong><span>录入针对该项的具体评分备注</span></strong><span>。</span></p></li></ol></li></ul></li><li><p><strong><span>保存与提交</span></strong></p><ul><li><p><strong><span>保存</span></strong><span>: 完成部分评分后，可点击【保存】按钮。</span><strong><span>保存后，当前评分记录会暂存，用户可以继续对该次评分进行修改和补充评分</span></strong><span>。</span></p></li><li><p><strong><span>提交</span></strong><span>: 完成所有评分后，点击【提交】按钮。</span><strong><span>提交后，该次评分将被最终确定，不可再修改</span></strong><span>。</span></p></li></ul></li></ol><h4 id='界面图示-3'><span>【界面图示】</span></h4><p><img src="assets/image-20260331144948274.png" referrerpolicy="no-referrer" alt="image-20260331144948274"></p><center> 图1-7 新建质控评分</center><h3 id='16-质控考核结果'><span>1.6 质控考核结果</span></h3><h4 id='功能简介对质控考核结果进行管理'><span>【功能简介】对质控考核结果进行管理。</span></h4><h4 id='操作描述-4'><span>【操作描述】 </span></h4><ol start='' ><li><p><strong><span>访问路径</span></strong><span>：在系统导航栏上，依次点击“</span><strong><span>质控管理</span></strong><span> -&gt; </span><strong><span>质控考核结果</span></strong><span>”，系统将进入“质控考核结果”主界面。</span></p></li><li><p><strong><span>查询考核结果</span></strong><span>：在查询区，通过选择“</span><strong><span>计划月份</span></strong><span>”和“</span><strong><span>评分月份</span></strong><span>”，点击查询，可获取指定时间范围内的质控考核结果列表。</span></p></li><li><p><strong><span>片区指定</span></strong><span>：在考核结果列表中，选中</span><strong><span>已提交的</span></strong><span>计划任务，点击操作列中的【</span><strong><span>片区指定</span></strong><span>】按钮，可对任务的负责片区进行分配或调整。</span></p></li><li><p><strong><span>审核与下发</span></strong><span>：在考核结果列表中，选中需要下发的记录，点击【</span><strong><span>审核下发</span></strong><span>】按钮。</span></p></li><li><p><strong><span>导出结果</span></strong><span>：点击列表上方的【</span><strong><span>导出</span></strong><span>】按钮，可将当前界面显示的考核结果（包括所有筛选后的记录）</span><strong><span>导出为一份Excel格式文件</span></strong><span>，便于存档、打印或离线分析。</span></p></li></ol><h4 id='界面图示-4'><span>【界面图示】</span></h4><p><img src="assets/image-20260331151345908.png" referrerpolicy="no-referrer" alt="image-20260331151345908"></p><center>图1-8 审核下发</center><p><img src="assets/image-20260331151717032.png" referrerpolicy="no-referrer" alt="image-20260331151717032"></p><center>图1-9 质控考核结果</center><h3 id='17-措施整改录入'><span>1.7 措施整改录入</span></h3><h4 id='功能简介对质控考核结果进行措施整改录入'><span>【功能简介】对质控考核结果进行措施整改录入。</span></h4><h4 id='操作描述-5'><span>【操作描述】</span></h4><ol start='' ><li><p><strong><span>进入界面</span></strong></p><ul><li><p><span>操作路径：在系统导航栏依次点击“</span><strong><span>质控管理</span></strong><span> → </span><strong><span>质控考核结果</span></strong><span>”。</span></p></li></ul></li><li><p><strong><span>查询考核结果</span></strong></p><ul><li><p><span>操作步骤：</span></p><ol start='' ><li><p><span>在顶部查询区域设置筛选条件：</span></p><ul><li><p><strong><span>计划时间</span></strong><span> (如：2026-03 ~ 2026-04)</span></p></li><li><p><strong><span>评估时间</span></strong><span> (如：2026-03-03 至 2026-04-30)</span></p></li><li><p><strong><span>质控层级</span></strong><span> (如下拉选择)</span></p></li><li><p><strong><span>状态</span></strong><span> (如下拉选择)</span></p></li></ul></li><li><p><span>（可选）可进一步指定“片区”、“科室”、“计划名称”进行筛选。</span></p></li><li><p><span>点击【</span><strong><span>查询</span></strong><span>】按钮。</span></p></li></ol></li><li><p><span>预期结果：界面列表区域刷新，显示符合筛选条件的考核结果记录。</span></p></li></ul></li><li><p><strong><span>查看结果列表</span></strong></p><ul><li><p><span>查询结果以表格形式展示，关键列包括：</span><strong><span>片区、科室、质控层级、质控标准、扣分标准、存在问题、表单备注、原因分析、整改措施、整改结果、操作</span></strong><span>。</span></p></li></ul></li><li><p><strong><span>下发结果（生成追踪表）</span></strong></p><ul><li><p><span>操作步骤：</span></p><ol start='' ><li><p><span>在结果列表中，选中需要下发的记录。</span></p></li><li><p><span>点击列表上方的【</span><strong><span>下发</span></strong><span>】或【</span><strong><span>审核下发</span></strong><span>】按钮。</span></p></li></ol></li><li><p><span>预期结果：系统基于选中的评分结果，生成一份【</span><strong><span>追踪查检表</span></strong><span>】，进入问题追踪与整改流程。</span></p></li></ul></li><li><p><strong><span>导出结果</span></strong></p><ul><li><p><span>操作步骤：</span></p><ol start='' ><li><p><span>设置好筛选条件，点击【查询】得到目标结果列表。</span></p></li><li><p><span>点击列表上方的【</span><strong><span>导出</span></strong><span>】按钮。</span></p></li></ol></li><li><p><span>预期结果：系统将当前列表中的数据</span><strong><span>导出为Excel文件</span></strong><span>。</span></p></li></ul></li><li><p><strong><span>进入追踪检查</span></strong></p><ul><li><p><span>操作步骤：</span></p><ol start='' ><li><p><span>在结果列表中定位到具体记录。</span></p></li><li><p><span>点击其操作列中的【</span><strong><span>追踪检查表</span></strong><span>】按钮。</span></p></li></ol></li><li><p><span>预期结果：系统弹出“追踪检查”窗口，显示该记录关联的详细问题列表。</span></p></li></ul></li><li><p><strong><span>追踪检查操作 (在弹出窗口中)</span></strong></p><ul><li><p><strong><span>筛选问题</span></strong><span>：可通过“护理单元”、“追踪状态”等条件对窗口内的问题进行二次筛选。</span></p></li><li><p><strong><span>批量操作</span></strong><span>：</span></p><ul><li><p><span>点击【</span><strong><span>一键整改</span></strong><span>】：将所有显示的问题状态设为“</span><strong><span>已整改</span></strong><span>”。</span></p></li><li><p><span>点击【</span><strong><span>一键未整改</span></strong><span>】：将所有显示的问题状态设为“</span><strong><span>未整改</span></strong><span>”。</span></p></li></ul></li><li><p><strong><span>编辑单条问题</span></strong><span>：针对每个问题，可录入其“追踪整改结果”。</span></p></li><li><p><strong><span>保存进度</span></strong><span>：点击【</span><strong><span>保存</span></strong><span>】，保存当前所有修改，窗口不关闭，可继续操作。</span></p></li><li><p><strong><span>提交结果</span></strong><span>：点击【</span><strong><span>提交</span></strong><span>】，提交后结果被锁定，不可再编辑。</span></p></li><li><p><strong><span>撤销提交</span></strong><span>：对已提交的结果，点击【</span><strong><span>撤销</span></strong><span>】，可恢复编辑状态。</span></p></li><li><p><strong><span>导出列表</span></strong><span>：点击【</span><strong><span>导出</span></strong><span>】，将当前窗口内的问题列表导出为Excel。</span></p></li></ul></li></ol><h4 id='界面图示-5'><span>【界面图示】</span></h4><p><img src="assets/image-20260331153342541.png" referrerpolicy="no-referrer" alt="image-20260331153342541"></p><center>图1-10质控考核结果 </center><h3 id='18-追踪检查'><span>1.8 追踪检查</span></h3><h4 id='功能简介-2'><span>【功能简介】</span></h4><p><span>对质控问题进行追踪检查。</span></p><h4 id='操作描述-6'><span>【操作描述】</span></h4><ol start='' ><li><p><strong><span>访问追踪检查</span></strong><span>：在相关界面，点击【</span><strong><span>追踪检查表</span></strong><span>】按钮，系统将弹出“追踪检查”窗口。</span></p></li><li><p><strong><span>筛选问题</span></strong><span>：在追踪检查窗口内，可以通过以下条件对问题进行筛选：</span></p><ul><li><p><strong><span>护理单元</span></strong></p></li><li><p><strong><span>追踪状态</span></strong><span>（如：已整改、未整改、待确认等）</span></p></li><li><p><strong><span>提交状态</span></strong></p></li><li><p><strong><span>计划名称</span></strong></p></li></ul></li><li><p><strong><span>批量整改：设置为已整改</span></strong><span>：点击【</span><strong><span>一键整改</span></strong><span>】按钮，系统将当前列表中所有</span><strong><span>被筛选出的问题</span></strong><span>状态批量更新为“</span><strong><span>已整改</span></strong><span>”。</span></p></li><li><p><strong><span>批量整改：设置为未整改</span></strong><span>：点击【</span><strong><span>一键未整改</span></strong><span>】按钮，系统将当前列表中所有</span><strong><span>被筛选出的问题</span></strong><span>状态批量更新为“</span><strong><span>未整改</span></strong><span>”。</span></p></li><li><p><strong><span>导出列表</span></strong><span>：点击【</span><strong><span>导出</span></strong><span>】按钮，可将当前窗口中显示的问题列表</span><strong><span>导出为一个Excel格式文件</span></strong><span>。</span></p></li><li><p><strong><span>录入单条问题整改结果</span></strong><span>：针对列表中的</span><strong><span>每个具体问题</span></strong><span>，可以进入其详情或直接在当前行，</span><strong><span>录入该问题的“追踪整改结果”</span></strong><span>（如原因分析、整改措施、整改人等）。</span></p></li><li><p><strong><span>保存进度</span></strong><span>：在检查和录入过程中，点击【</span><strong><span>保存</span></strong><span>】按钮。此操作会保存当前所有修改，</span><strong><span>窗口不会关闭，用户可以继续进行后续的检查与录入</span></strong><span>。</span></p></li><li><p><strong><span>提交结果</span></strong><span>：完成所有检查与录入后，点击【</span><strong><span>提交</span></strong><span>】按钮。提交后，</span><strong><span>当前追踪检查的结果将被锁定，不可再进行编辑</span></strong><span>。</span></p></li><li><p><strong><span>撤销提交</span></strong><span>：对于</span><strong><span>已提交</span></strong><span>的追踪检查结果，可以点击【</span><strong><span>撤销</span></strong><span>】按钮。撤销后，该检查结果</span><strong><span>恢复为可编辑状态</span></strong><span>，用户可以继续进行修改。</span></p></li></ol><h4 id='界面图示-6'><span>【界面图示】</span></h4><p><img src="assets/image-20260331153807697.png" referrerpolicy="no-referrer" alt="image-20260331153807697"></p><center>图1-11 追踪检查</center><p><img src="assets/image-20260331154005051.png" referrerpolicy="no-referrer" alt="image-20260331154005051"></p><center>图1-12 追踪检查-一键追踪</center><h3 id='19质控追踪结果'><span>1.9质控追踪结果</span></h3><h4 id='功能简介-3'><span>【功能简介】</span></h4><p><span>对质控追踪检查结果进行管理。</span></p><h4 id='操作描述-7'><span>【操作描述】 </span></h4><ol start='' ><li><p><strong><span>进入界面</span></strong></p><ul><li><p><span>操作路径：在左侧导航栏中，点击“</span><strong><span>质控追踪结果</span></strong><span>”菜单项，进入质控追踪结果主界面。</span></p></li></ul></li><li><p><strong><span>设置查询条件并查询</span></strong></p><ul><li><p><span>操作步骤：</span></p><ol start='' ><li><p><span>在顶部查询区域设置筛选条件：</span></p><ul><li><p><strong><span>计划月份选择</span></strong><span>：选择计划所属月份（如图中示例：2026-02 ~ 2026-02）</span></p></li><li><p><strong><span>评分月份选择</span></strong><span>：选择评分所属月份（如图中示例：2026-02 ~ 2026-02）</span></p></li><li><p><strong><span>护理部</span></strong><span>：选择护理部（如图中示例：护理部）</span></p></li><li><p><strong><span>片区</span></strong><span>：选择片区（如图中示例：全部片区）</span></p></li><li><p><strong><span>科室</span></strong><span>：选择科室（如图中示例：片区全部科室）</span></p></li><li><p><strong><span>计划名称</span></strong><span>：输入计划名称关键词（可选）</span></p></li></ul></li><li><p><span>点击【</span><strong><span>标准选择</span></strong><span>】按钮，可选择具体的质控标准（可选）。</span></p></li><li><p><span>点击【</span><strong><span>导出</span></strong><span>】按钮，可导出当前查询结果（可选）。</span></p></li><li><p><span>点击【</span><strong><span>查询</span></strong><span>】按钮（蓝色放大镜图标）。</span></p></li></ol></li><li><p><span>预期结果：界面列表区域刷新，显示符合筛选条件的追踪结果记录。</span></p></li></ul></li><li><p><strong><span>查看结果列表</span></strong></p><ul><li><p><span>查询结果以表格形式展示，关键列包括：</span></p><ul><li><p><strong><span>片区</span></strong><span>：如“外科片区”、“肿瘤/急危重症片区”、“妇产儿科片区”等。</span></p></li><li><p><strong><span>护理单元</span></strong><span>：显示具体的护理单元名称（部分被模糊处理）。</span></p></li><li><p><strong><span>检查评分标准</span></strong><span>：如“2026年2月护理总值班(病区)”。</span></p></li><li><p><strong><span>具体缺陷问题</span></strong><span>：显示具体的质控缺陷描述，包含“存在问题”、“日期”、“评分人”、“追踪人”等信息，部分条目后标注“[已整改]”。</span></p></li><li><p><strong><span>追踪总项</span></strong><span>、</span><strong><span>合格项目</span></strong><span>、</span><strong><span>单项整改</span></strong><span>、</span><strong><span>综合整改</span></strong><span>：显示各维度的统计或操作入口。</span></p></li></ul></li></ul></li><li><p><strong><span>筛选与查看细节</span></strong></p><ul><li><p><span>可通过点击“</span><strong><span>片区</span></strong><span>”、“</span><strong><span>护理单元</span></strong><span>”、“</span><strong><span>检查评分标准</span></strong><span>”、“</span><strong><span>具体缺陷问题</span></strong><span>”等列的标题或使用列内筛选功能（如有）进行二次筛选。</span></p></li><li><p><span>在“</span><strong><span>具体缺陷问题</span></strong><span>”列中，可点击蓝色链接（如“存在问题”、“已整改”）查看或跳转至更详细的整改记录。</span></p></li></ul></li><li><p><strong><span>操作记录示例</span></strong></p><ul><li><p><strong><span>外科片区</span></strong><span>：</span></p><ul><li><p><span>护理单元：2026年2月护理总值班(病区)</span></p></li><li><p><span>具体缺陷问题：</span></p><ul><li><p><span>▲高危跌倒患者床头及手腕识别带有“防跌倒”标识(存在问题:跌倒高风险，腕带上没有标识)[日期:2026-02-07]</span></p></li></ul></li></ul></li></ul></li><li><p><strong><span>导出结果</span></strong></p><ul><li><p><span>操作步骤：</span></p><ol start='' ><li><p><span>设置好筛选条件，点击【查询】得到目标结果列表。</span></p></li><li><p><span>点击【</span><strong><span>导出</span></strong><span>】按钮。</span></p></li></ol></li><li><p><span>预期结果：系统将当前列表中的数据</span><strong><span>导出为Excel文件</span></strong><span>。</span></p></li></ul></li><li><p><strong><span>其他操作</span></strong></p><ul><li><p><span>可通过点击“</span><strong><span>单项整改</span></strong><span>”、“</span><strong><span>综合整改</span></strong><span>”等操作按钮，进入对应的整改管理界面（具体操作流程见相关说明）。</span></p></li></ul></li></ol><h4 id='界面图示-7'><span>【界面图示】</span></h4><p><img src="assets/image-20260331153513650.png" referrerpolicy="no-referrer" alt="image-20260331153513650"></p><center>图1-13 质控追踪结果</center></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
+</html>

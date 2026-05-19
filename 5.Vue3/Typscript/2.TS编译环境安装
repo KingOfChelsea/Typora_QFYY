@@ -1,0 +1,17 @@
+# TS编译环境安装
+
+---
+
+## 1.TypeScript的编译
+
+`JavaScript`的运行环境（浏览器和 `Node.js`）不认识 `TypeScript` 代码。所以，`TypeScript` 项目要想运行，必须先转为`JavaScript`代码，这个代码转换的过程就叫做“编译”（`compile`）。
+
+`TypeScript` 官方没有做运行环境，只提供编译器。编译时，会将类型声明和类型相关的代码全部删除，只留下能运行的`JavaScript`代码，并且不会改变 `JavaScript` 的运行结果。
+
+因此，`TypeScript` 的类型检查只是编译时的类型检查，而不是运行时的类型检查。一旦代码编译为 `JavaScript`，运行时就不再检查类型了。
+
+## 2.tsc编译器
+
+### 2.1 安装编译器
+
+安装`tsc`编译器首先需要具备`node.js`如下地址安装``	
