@@ -1,0 +1,40 @@
+# LIS检验程序下发
+
+> 注意：需要先执行数据库中的脚本进行补偿缺失的字段等数据格式化数据
+
+## 1.修改NeuLisFTP.xml
+
+找到程序下发目录`NeuLisFTP.xml`,找到`UPDATETYPE`标签
+
+![image-20260526115512991](https://gitee.com/HavertzPlatform/worker-picgo/raw/master/image-20260526115512991.png)
+
+<center>图1</center>
+
+## 2.双击NeuLisFtp.exe
+
+下发密码：`0`
+
+![image-20260526115630254](https://gitee.com/HavertzPlatform/worker-picgo/raw/master/image-20260526115630254.png)
+
+<center>图2</center>
+
+## 3.添加待更新文件
+
+**注意**上传文件必须包含**Version.ini**
+
+![image-20260526115941286](https://gitee.com/HavertzPlatform/worker-picgo/raw/master/image-20260526115941286.png)
+
+<center>图3</center>
+
+![image-20260526120045194](https://gitee.com/HavertzPlatform/worker-picgo/raw/master/image-20260526120045194.png)
+
+<center>图4</center>
+
+## 4.上传更新文件
+
+上传成功后可修改`NeuLisFTP.xml`文件的`UPDATETYPE` Value节点为`0`，再双击`NeuLisFTP.exe`进行程序更新。
+
+![image-20260526120303611](https://gitee.com/HavertzPlatform/worker-picgo/raw/master/image-20260526120303611.png)2
+
+
+

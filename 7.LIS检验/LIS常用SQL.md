@@ -21,4 +21,16 @@ SELECT a.*, a.ROWID  FROM las_sap_samplereg a
 select a.*,a.rowid from las_com_machineitem  a where a.itemname like '%☆%' 
 ```
 
-## 1.4 
+## 1.4 检验样本核收
+
+`汕头中医医院，样本类型没有自动带出来`
+
+```sql,
+select  a.ordertime,a.sampletype,a.hisitemname,a.* from las_sap_barcodereg  a 
+where 1=1
+-- and  a. SAMPLETYPE is null 
+and a.hisitemname is NOT  null 
+and  a.hisitemname LIKE '%常规药敏%'
+order by a.ordertime desc 
+  -- 条码登记表 
+```
