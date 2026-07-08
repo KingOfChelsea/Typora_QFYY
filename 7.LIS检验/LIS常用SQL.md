@@ -1,6 +1,6 @@
 # LIS常用SQL
 
-## 1.1常规检验样本信息
+## 1.1常规检验样本信息(核收)
 
 样本核收过程：
     1、样本基本信息插入此表中
@@ -68,3 +68,29 @@ SELECT a.*, a.ROWID  FROM las_gm_resultproc a  -- 微生物检验结果表（过
 where a.barcode = '2000595915'
 ```
 
+## 1.8 危机值维护对照关系
+
+```sql
+SELECT
+    T.ITEMID                        AS item_code,        -- 项目ID
+    T.DEPTID                        AS dept_code,        -- 适用科室
+    MAX(T.SEX)                      AS gender,           -- 性别限制
+    MAX(T.SAMPLETYPE)               AS sample_type,      -- 样本类型限制
+    MAX(T.AGEDOWN)                  AS age_min,          -- 年龄下限
+    MAX(T.AGEUP)                    AS age_max,          -- 年龄上限
+    SUBSTR(T.rangeinfo, 1, INSTR(T.rangeinfo, '--') - 1)   AS ref_min,     -- 参考下限
+    SUBSTR(T.rangeinfo, INSTR(T.rangeinfo, '--') + 2)      AS ref_max,     -- 参考上限
+    SUBSTR(T.LIMITRANGE, 1, INSTR(T.LIMITRANGE, ',') - 1)  AS critical_min, -- 危急值下限
+    SUBSTR(T.LIMITRANGE, INSTR(T.LIMITRANGE, ',') + 1)     AS critical_max, -- 危急值上限
+    CAST('' AS VARCHAR2(64))        AS is_default,       -- 默认标记（预留字段）
+    MAX(T.OPERTIME)                 AS update_time       -- 更新时间
+FROM winlis.LAS_COM_ITEMRANGE T
+GROUP BY 
+    T.ITEMID,
+    T.DEPTID,
+    T.rangeinfo,
+    T.MENSTRUALCYCLE,
+    T.LIMITRANGE
+```
+
+## 1.9 
