@@ -9,6 +9,13 @@
 
 ```sql
 SELECT a.*, a.ROWID  FROM las_sap_samplereg a
+
+select 
+a.state2 as "PDF生成状态（第5位外送接口、第10位是否生成PDF）",
+a.lsptestform as 是否上传平台,
+a.*,a.rowid 
+from las_sap_samplereg a
+where a.barcode = '2000692886'
 ```
 
 ## 1.2 一管血维护
