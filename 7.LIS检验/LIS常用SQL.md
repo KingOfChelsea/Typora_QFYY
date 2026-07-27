@@ -100,5 +100,41 @@ GROUP BY
     T.LIMITRANGE
 ```
 
-## 1.9 TAT运转 
+## 1.9 TAT运转
 
+## 1.10 报告描述表
+
+```sql
+SELECT t.barcode,
+       t.machineid,
+       t.testdate,
+       t.sampleid,
+       t.patientid,
+       t.descvalue,
+       t.desc1,
+       t.desc2,
+       t.desc3,
+       t.descinternal,
+       t.morphologydesc1,
+       t.morphologydesc2,
+       t.morphologydesc3,
+       t.morphologydesc4
+        FROM LAS_RT_DESCRESULT T  --检验单的描述性结果 
+        WHERE T.SAMPLEID = '100050'
+        AND T.MACHINEID = 'MY_CCC602'
+        AND T.TESTDATE = '20260720'
+```
+
+
+
+<img src="https://gitee.com/HavertzPlatform/worker-picgo/raw/master/20260721145318868.png" alt="image-20260721145318652" style="zoom:50%;" /> 
+
+## 1.11 金域报告回传
+
+```sql
+SELECT a.*, a.ROWID  FROM 
+SELECT a.state2,a.lsptestform, a.*, a.ROWID  FROM las_sap_samplereg a
+where a.barcode = '2000669123'
+```
+
+![image-20260727163816602](https://gitee.com/HavertzPlatform/worker-picgo/raw/master/20260727163816715.png)
