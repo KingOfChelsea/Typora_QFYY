@@ -131,10 +131,13 @@ SELECT t.barcode,
 
 ## 1.11 金域报告回传
 
+![image-20260806102414617](https://gitee.com/HavertzPlatform/worker-picgo/raw/master/20260806102414650.png)
+
 ```sql
-SELECT a.*, a.ROWID  FROM 
 SELECT a.state2,a.lsptestform, a.*, a.ROWID  FROM las_sap_samplereg a
 where a.barcode = '2000669123'
 ```
 
-![image-20260727163816602](https://gitee.com/HavertzPlatform/worker-picgo/raw/master/20260727163816715.png)
+<img src="https://gitee.com/HavertzPlatform/worker-picgo/raw/master/20260727163816715.png" alt="image-20260727163816602" style="zoom:250%;" />
+
+## 1.12 Ser
