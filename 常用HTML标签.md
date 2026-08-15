@@ -28,3 +28,21 @@
 <a href="/path/to/file.pdf" download="filename.pdf">下载PDF文件</a>
 ```
 
+4. 文字颜色标签
+
+```html
+<span style="color: red; font-size: 18px;">红色文字</span>
+<span style="color: #3498db; font-size: 20px;">蓝色文字</span>
+<span style="color: rgb(46, 204, 113); font-size: 16px;">绿色文字</span>
+<span style="color: #e67e22; font-size: 20px;"></span>
+<span style="color: purple; font-size: 14px;">紫色文字</span>
+```
+
+
+
+
+
+
+
+
+
