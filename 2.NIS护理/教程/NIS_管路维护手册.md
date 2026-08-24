@@ -4,9 +4,16 @@ author: 徐振宇
 date: 2026-08-06
 ---
 
-
-
 # NIS管路维护手册
+
+管路使用界面参数开启方式
+
+```sql
+SELECT a.*, a.ROWID  FROM nis_plugin_conf a
+where a.name like '%管%'
+```
+
+![image-20260820180353804](https://gitee.com/HavertzPlatform/worker-picgo/raw/master/20260820180354033.png)
 
 ## 1. 菜单选择 
 
