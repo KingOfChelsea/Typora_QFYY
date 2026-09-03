@@ -140,4 +140,12 @@ where a.barcode = '2000669123'
 
 <img src="https://gitee.com/HavertzPlatform/worker-picgo/raw/master/20260727163816715.png" alt="image-20260727163816602" style="zoom:250%;" />
 
-## 1.12 Ser
+## 1.12 数据字典相关
+
+```sql
+ SELECT a.*, a.ROWID  FROM  LAS_SYS_DICTIONARY a
+ where  a.TYPEID   = 'WJZBBWFZJSL'
+
+SELECT T.*,DECODE(T.DICCLASS, '1', '公用字典', '2', '特殊字典', '3', '系统字典') AS DC,t.rowid FROM LAS_SYS_DICTIONARY T
+        WHERE TYPEID = 'DICTYPE' and t.dicname like '%危急值报表5分钟接受率参数%'
+        ORDER BY SHOWORDER
