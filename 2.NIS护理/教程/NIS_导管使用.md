@@ -88,3 +88,4 @@ date: 2026-08-06
 ![image-20260806104647104](https://gitee.com/HavertzPlatform/worker-picgo/raw/master/20260806104647159.png)
 
 <p align="center">修改与删除项目信息功能点说明 图2-4</p>
+
